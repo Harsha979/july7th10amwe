@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import { Link, useNavigate } from 'react-router-dom';
 import './App.css';
+import NavBar from './Components/NavBar';
 
 function App() {
+  const navigate=useNavigate()
   return (
+    <div>
+      <NavBar/>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <h1>Welcome To Main Page</h1>
+        <button onClick={()=>{navigate("/register")}}>Register</button>
+        <button onClick={()=>{navigate("/login")}}>Login</button>
+        <Link to="/register">register</Link>
+        <Link to="/Login">Login</Link>
+    </div>
     </div>
   );
 }
